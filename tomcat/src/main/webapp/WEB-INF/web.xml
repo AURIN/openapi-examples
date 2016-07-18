@@ -1,0 +1,39 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  
+  <!-- added for cgi-->   
+     <servlet>
+      <servlet-name>cgi</servlet-name>
+      <servlet-class>org.apache.catalina.servlets.CGIServlet</servlet-class>
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>0</param-value>
+    </init-param>
+    <init-param>
+      <param-name>cgiPathPrefix</param-name>
+      <param-value>WEB-INF/cgi</param-value>
+    </init-param>
+    <init-param>
+        <param-name>executable</param-name>
+      <param-value>python</param-value>
+    </init-param>
+    <init-param>
+      <param-name>passShellEnvironment</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <load-on-startup>5</load-on-startup>
+  </servlet>
+
+     <servlet-mapping>
+        <servlet-name>cgi</servlet-name>
+        <url-pattern>/cgi-bin/*</url-pattern>
+    </servlet-mapping>
+ 
+<!-- end  for cgi -->
+</web-app>
+
+
